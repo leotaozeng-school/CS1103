@@ -4,12 +4,11 @@
 Exception handling is the art of managing errors and exceptions gracefully in our code, ensuring that software remains robust and reliable. We will learn how to use **try-catch blocks, throw and throws keywords**, and handle different **types of exceptions**. Additionally, we will delve into the world of strings, understanding their importance in working with textual data and harnessing the power of **Java's string handling capabilities**.
 
 ## Assignment Instructions
-This assignment aims to assess your skills/knowledge on basics of String creation and various string handling functions. This is a scenario based practical assignment to create a text analysis tool, providing students with a hands-on opportunity to apply their programming skills in a real-world context. The assignment focuses on developing a program that performs various operations on text input, enhancing students' skills in handling strings, data analysis, and user interaction. 
+In this assignment, you will create a simple e-commerce system for an online store using Java. The system allows customers to browse products, add them to a shopping cart, and place orders. The focus is on organizing the code using Java packages and the import statement for better encapsulation.
 
-**Scenario:** You have been asked to create a text analysis tool that will perform various operations on a given text input. This tool will help users gain insights into the text data by performing character and word analysis.  
+**Scenario:** You are tasked with building a simple e-commerce system for an online store. This system should allow customers to browse products, add them to a shopping cart, and place orders. To ensure proper organization and encapsulation, you will be using Java packages and the **import** statement.  
 
 ## Assignment Tasks:
-
 1. Create a Java package named **com.ecommerce** to encapsulate all classes related to the e-commerce system.  
 
 2. Inside the **com.ecommerce** package, create the following classes:

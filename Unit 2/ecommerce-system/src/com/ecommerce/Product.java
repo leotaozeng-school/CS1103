@@ -3,7 +3,7 @@ package com.ecommerce;
 import java.math.BigDecimal;
 
 public class Product {
-    private String productID; // private = restricted access
+    private final String productID; // private = restricted access
     private String name;
     private String description;
     private BigDecimal price;
@@ -54,5 +54,28 @@ public class Product {
 
     public void setStockQuantity(int stockQuantity) {
         this.stockQuantity = stockQuantity;
+    }
+
+    // Other methods
+    public void incrementStockQuantity(int quantity) {
+        this.stockQuantity+= quantity;
+    }
+
+    public void decrementStockQuantity(int quantity) {
+        if (quantity > this.stockQuantity) {
+            throw new IllegalArgumentException("Quantity exceeds stock limit");
+        }
+        this.stockQuantity -= quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productID='" + productID + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", stockQuantity=" + stockQuantity +
+                '}';
     }
 }

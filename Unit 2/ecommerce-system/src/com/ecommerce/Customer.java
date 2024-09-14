@@ -1,24 +1,26 @@
 package com.ecommerce;
 
 public class Customer {
-    private String customerID;
+    private final String customerID;
     private String name;
-    private int shoppingCartID;
 
     // Constructor Declaration of Class
-    public Customer(int productID, int startSpeed, int startGear) {
-        gear = startGear;
-        cadence = startCadence;
-        speed = startSpeed;
+    public Customer(String customerID, String name) {
+        this.customerID = customerID;
+        this.name = name;
     }
 
     // Getter
+    public String getCustomerID() {
+        return customerID;
+    }
+
     public String getName() {
         return name;
     }
 
     // Setter
-    public void setName(String newName) {
-        this.name = newName;
+    public void setName(String name) {
+        this.name = name;
     }
 }

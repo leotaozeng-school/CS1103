@@ -19,14 +19,14 @@ In this assignment, you will create a simple e-commerce system for an online sto
 3. Create a package named  **com.ecommerce.orders** for managing orders. 
 
 4. Inside the **com.ecommerce.orders**  package, create the following classes:
-  - **Order** class: This class should represent an order placed by a customer. Include attributes like **orderID**, **customer**, **products**, and the order total. Implement methods to generate order summaries, update order status, and manage order information.  
+    - **Order** class: This class should represent an order placed by a customer. Include attributes like **orderID**, **customer**, **products**, and the order total. Implement methods to generate order summaries, update order status, and manage order information.  
 
 5. In the main program (outside of packages), demonstrate the use of packages and the import statement by:  
-  - Creating instances of products, customers, and orders.  
+    - Creating instances of products, customers, and orders.  
 
-  - Allowing customers to browse products, add them to their shopping cart, and place orders.  
+    - Allowing customers to browse products, add them to their shopping cart, and place orders.  
 
-  - Displaying information about products, customers, and orders.  
+    - Displaying information about products, customers, and orders.  
 
 6. Make sure to import the necessary classes from the **com.ecommerce** and **com.ecommerce.orders**  packages into the main program.  
 

@@ -2,7 +2,6 @@ import com.ecommerce.Customer;
 import com.ecommerce.Product;
 import com.ecommerce.carts.ShoppingCart;
 import com.ecommerce.orders.Order;
-
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;

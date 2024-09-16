@@ -1,16 +1,16 @@
 package com.ecommerce;
 
 import com.ecommerce.carts.ShoppingCart;
-
 import java.util.UUID;
 
 public class Customer {
     private final String customerID;
     private String name;
-    private ShoppingCart cart;
+    private final ShoppingCart cart;
 
     // Constructor Declaration of Class
     public Customer(String name) {
+        // The UUID.randomUUID().toString() method can generate unique identifiers for any class that needs a unique ID
         this.customerID = UUID.randomUUID().toString();
         this.name = name;
         this.cart = new ShoppingCart();

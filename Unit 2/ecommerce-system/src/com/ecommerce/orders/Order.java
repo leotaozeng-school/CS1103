@@ -2,7 +2,6 @@ package com.ecommerce.orders;
 
 import com.ecommerce.Customer;
 import com.ecommerce.Product;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -24,6 +23,7 @@ public class Order {
 
     // Constructor Declaration of Class
     public Order(Customer customer, Map<Product, Integer> products) {
+        // The UUID.randomUUID().toString() method can generate unique identifiers for any class that needs a unique ID
         this.orderID = UUID.randomUUID().toString();
         this.customer = customer;
         this.products = new HashMap<>(products);

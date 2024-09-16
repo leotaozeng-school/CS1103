@@ -1,6 +1,8 @@
 package com.ecommerce;
 
-import com.ecommerce.cart.ShoppingCart;
+import com.ecommerce.carts.ShoppingCart;
+
+import java.util.UUID;
 
 public class Customer {
     private final String customerID;
@@ -8,8 +10,8 @@ public class Customer {
     private ShoppingCart cart;
 
     // Constructor Declaration of Class
-    public Customer(String customerID, String name) {
-        this.customerID = customerID;
+    public Customer(String name) {
+        this.customerID = UUID.randomUUID().toString();
         this.name = name;
         this.cart = new ShoppingCart();
     }
@@ -39,10 +41,10 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "customerID='" + customerID + '\'' +
+        return "Customer{ " +
+                "customer_id='" + customerID + '\'' +
                 ", name='" + name + '\'' +
                 ", cart=" + cart +
-                '}';
+                " }";
     }
 }

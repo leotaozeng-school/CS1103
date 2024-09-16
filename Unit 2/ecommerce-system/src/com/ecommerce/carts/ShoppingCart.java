@@ -1,4 +1,4 @@
-package com.ecommerce.cart;
+package com.ecommerce.carts;
 
 import com.ecommerce.Product;
 
@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ShoppingCart {
     // Create a HashMap of Product keys and Integer values
-    private Map<Product, Integer> items;
+    private final Map<Product, Integer> items;
 
     // Constructor Declaration of Class
     public ShoppingCart() {
@@ -20,17 +20,17 @@ public class ShoppingCart {
         return this.items;
     }
 
-    // Add products to the shopping cart
+    // Add products to the shopping carts
     public void addProduct(Product product, int quantity) {
-        // put() method would simply overwrite the existing quantity if the product is already in the cart.
-        // merge() method adds the new quantity to the existing quantity if the product is already in the cart.
+        // put() method would simply overwrite the existing quantity if the product is already in the carts.
+        // merge() method adds the new quantity to the existing quantity if the product is already in the carts.
         // The first argument product is the key.
         // The second argument quantity is the value to be merged.
         // The third argument Integer::sum is a function that defines how to merge the values.
         this.items.merge(product, quantity, Integer::sum);
     }
 
-    // Remove products from the shopping cart
+    // Remove products from the shopping carts
     public void removeProduct(Product product) {
         this.items.remove(product);
     }
@@ -38,14 +38,6 @@ public class ShoppingCart {
     // Clear and remove all the products
     public void clearProducts() {
         this.items.clear();
-    }
-
-    public void updateQuantity(Product product, int newQuantity) {
-        if (newQuantity <= 0) {
-            removeProduct(product);
-        } else {
-            this.items.put(product, newQuantity);
-        }
     }
 
     public BigDecimal getTotalPrice() {

@@ -20,7 +20,7 @@ public class Product {
         this.stockQuantity = stockQuantity;
     }
 
-    // Getter
+    // Getters
     public String getProductID() {
         return productID;
     }
@@ -41,7 +41,7 @@ public class Product {
         return stockQuantity;
     }
 
-    // Setter
+    // Setters
     public void setName(String name) {
         this.name = name;
     }
@@ -73,11 +73,11 @@ public class Product {
     @Override
     public String toString() {
         return "Product{ " +
-                "product_id='" + productID + '\'' +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", stock_quantity=" + stockQuantity +
+                "product_id='" + getProductID() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", price=" + getPrice() +
+                ", description='" + getDescription() + '\'' +
+                ", stock_quantity=" + getStockQuantity() +
                 " }";
     }
 }

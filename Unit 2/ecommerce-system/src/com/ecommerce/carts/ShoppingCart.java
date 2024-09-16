@@ -15,7 +15,7 @@ public class ShoppingCart {
         this.items = new HashMap<>();
     }
 
-    // Getter
+    // Getters
     public Map<Product, Integer> getItems() {
         return this.items;
     }
@@ -44,13 +44,5 @@ public class ShoppingCart {
         return this.items.entrySet().stream()
                 .map(entry -> entry.getKey().getPrice().multiply(BigDecimal.valueOf(entry.getValue())))
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
-    }
-
-    @Override
-    public String toString() {
-        return "ShoppingCart{" +
-                "items=" + items +
-                ", totalPrice=" + getTotalPrice() +
-                '}';
     }
 }

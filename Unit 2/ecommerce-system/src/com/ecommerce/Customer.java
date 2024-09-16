@@ -16,7 +16,7 @@ public class Customer {
         this.cart = new ShoppingCart();
     }
 
-    // Getter
+    // Getters
     public String getCustomerID() {
         return this.customerID;
     }
@@ -29,7 +29,7 @@ public class Customer {
         return this.cart;
     }
 
-    // Setter
+    // Setters
     public void setName(String name) {
         this.name = name;
     }
@@ -42,9 +42,9 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{ " +
-                "customer_id='" + customerID + '\'' +
-                ", name='" + name + '\'' +
-                ", cart=" + cart +
+                "customer_id='" + getCustomerID() + '\'' +
+                ", name='" + getName() + '\'' +
+                ", cart=" + getCart() +
                 " }";
     }
 }

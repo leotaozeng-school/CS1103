@@ -36,7 +36,7 @@ public class Customer {
 
     // Other methods
     public void clearCart() {
-        this.cart = new ShoppingCart();
+        this.cart.clear();
     }
 
     @Override

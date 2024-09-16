@@ -15,7 +15,7 @@ public class Main {
             Product laptop = new Product("Laptop", "Apple 2024 MacBook Air 13-inch Laptop", new BigDecimal("1099.00"), 20);
             Product smartphone = new Product("Smartphone", "Apple iPhone SE 64GB (PRODUCT)RED", new BigDecimal("429.00"), 20);
             Product headphones = new Product("Headphones", "Bose QuietComfort Ultra Headphones", new BigDecimal("349.00"), 30);
-            Product mouse = new Product("Mouse", "Logitech MX Master 3S Wireless Performance Mouse", new BigDecimal("99.99"), 30);
+            Product mouse = new Product("Mouse", "Logitech MX Master 3S Wireless Performance Mouse", new BigDecimal("99.99"), 25);
 
             // Create a fixed-size List containing the specified elements
             List<Product> productCatalog = Arrays.asList(laptop, smartphone, headphones, mouse);
@@ -34,8 +34,12 @@ public class Main {
 
             ShoppingCart myCart = tao.getCart();
             myCart.addProduct(laptop, 2);
-            myCart.addProduct(laptop, 5);
+            myCart.addProduct(laptop, 12);
+            myCart.addProduct(laptop, 30);
             myCart.addProduct(headphones, 1);
+            myCart.addProduct(headphones, 20);
+            myCart.addProduct(smartphone, 5);
+            myCart.removeProduct(mouse, 1);
 
             // Display information about customer's shopping cart
             Map<Product, Integer> myItems = myCart.getItems();
@@ -48,6 +52,7 @@ public class Main {
             // Place an order
             Order myOrder = new Order(tao, myItems);
 
+            // Display order summary
             System.out.println("\nOrder placed:");
             System.out.println(myOrder.generateOrderSummary());
 
@@ -58,7 +63,7 @@ public class Main {
             // Clear the cart after placing the order
             tao.clearCart();
 
-            System.out.println("\nCart after placing order:");
+            System.out.print("Shopping cart after placing order: ");
             System.out.println(tao.getCart().getItems().isEmpty() ? "Empty" : tao.getCart().getItems());
         } catch (Exception e) {
             throw new RuntimeException(e);

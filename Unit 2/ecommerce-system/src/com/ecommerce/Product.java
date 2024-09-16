@@ -1,6 +1,7 @@
 package com.ecommerce;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public class Product {
     private final String productID; // private = restricted access
@@ -10,8 +11,9 @@ public class Product {
     private int stockQuantity;
 
     // Constructor Declaration of Class
-    public Product(String productID, String name, String description, BigDecimal price, int stockQuantity) {
-        this.productID = productID;
+    public Product(String name, String description, BigDecimal price, int stockQuantity) {
+        // The UUID.randomUUID().toString() method can generate unique identifiers for any class that needs a unique ID
+        this.productID = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
         this.price = price;
@@ -57,11 +59,11 @@ public class Product {
     }
 
     // Other methods
-    public void incrementStockQuantity(int quantity) {
+    public void increaseStock(int quantity) {
         this.stockQuantity+= quantity;
     }
 
-    public void decrementStockQuantity(int quantity) {
+    public void decreaseStock(int quantity) {
         if (quantity > this.stockQuantity) {
             throw new IllegalArgumentException("Quantity exceeds stock limit");
         }

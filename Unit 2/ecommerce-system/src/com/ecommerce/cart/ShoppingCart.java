@@ -1,6 +1,8 @@
 package com.ecommerce.cart;
 
 import com.ecommerce.Product;
+
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,8 +48,10 @@ public class ShoppingCart {
         }
     }
 
-    public Integer getTotalPrice() {
-        return 0;
+    public BigDecimal getTotalPrice() {
+        return this.items.entrySet().stream()
+                .map(entry -> entry.getKey().getPrice().multiply(BigDecimal.valueOf(entry.getValue())))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     @Override

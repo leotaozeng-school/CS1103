@@ -9,12 +9,27 @@ public class Clock {
     // Constructor Declaration of Class
     public Clock() {
         this.currentTime = LocalDateTime.now();
-        this.timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        this.dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        this.timeFormatter = DateTimeFormatter.ofPattern("KK:mma");
+        this.dateFormatter = DateTimeFormatter.ofPattern("cccc, MMMM dd, yyyy");
     }
 
     // Getters
-    public LocalDateTime displayCurrentTime() {
-        return this.currentTime;
+    public String getTime() {
+        return this.currentTime.format(this.timeFormatter);
+    }
+
+    public String getDate() {
+        return this.currentTime.format(this.dateFormatter);
+    }
+
+    // Setters
+    public void updateTime(String time) {
+        this.currentTime = LocalDateTime.now();
+    }
+
+    // Other methods
+    public void displayTimeAndDate() {
+        System.out.println("Current time: " + this.getTime());
+        System.out.println("Current date: " + this.getDate());
     }
 }

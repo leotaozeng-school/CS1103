@@ -15,6 +15,7 @@ public class Clock {
         this.currentTime = LocalDateTime.now().format(this.formatter);
     }
 
+    // The display thread only shows the time after it has been updated
     public synchronized String getCurrentTime() throws InterruptedException {
         while (!this.updated) {
             wait(); // Wait until the time has been updated

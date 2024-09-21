@@ -1,6 +1,9 @@
-import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
         Clock clock = new Clock("HH:mm:ss dd-MM-yyyy");
 
@@ -20,11 +23,22 @@ public class Main {
         try {
             Thread.sleep(120000);  // Run for 2 minutes
         } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+            logger.log(Level.SEVERE, "Main thread interrupted", e);
+            Thread.currentThread().interrupt();
+        } finally {
+            updater.stop();
+            display.stop();
 
-        // Stop the threads
-        updater.stop();
-        display.stop();
+            updaterThread.interrupt();
+            displayThread.interrupt();
+
+            try {
+                updaterThread.join(1000);
+                displayThread.join(1000);
+            } catch (InterruptedException e) {
+                logger.log(Level.SEVERE, "Interrupted while waiting for threads to finish", e);
+                Thread.currentThread().interrupt();
+            }
+        }
     }
 }

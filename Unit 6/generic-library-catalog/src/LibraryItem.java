@@ -4,9 +4,9 @@ b. Ensure that the LibraryItem class is compatible with the generic catalog
 */
 
 public class LibraryItem<T> {
-    private String title;  // private = restricted access
-    private String author;
-    private T itemID;
+    private final String title;  // private = restricted access
+    private final String author;
+    private final T itemID;
 
     // Create a class constructor for the LibraryItem class
     public LibraryItem(String title, String author, T itemID) {

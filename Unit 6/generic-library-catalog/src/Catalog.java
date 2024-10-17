@@ -1,6 +1,8 @@
 /*
 a. Implement a generic catalog class that can store information about library items (e.g., books, DVDs, magazines)
 b. Ensure that the catalog works seamlessly with different types of items by using generics
+c. Develop methods within the generic catalog to add a new library item, remove an item, and retrieve item details
+d. Implement error handling to manage scenarios such as attempting to remove a non-existent item
 */
 
 import java.util.ArrayList;

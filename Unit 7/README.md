@@ -1,10 +1,10 @@
-## Assignment Title: Online Chat Application
+## Online Chat Application
 This assignment aims to assess your skills in socket programming, client-server communication, and user interface design.
 
-## Assignment Instructions
+## Instructions
 You are tasked with developing a simple online chat application using Java. The application should allow multiple users to connect to a central server, send messages, and receive messages from other users.
 
-## Assignment Tasks:
+### Tasks:
 1. **Server Implementation:**
    - Create a server class, ChatServer, using socket programming to manage connections from multiple clients.
    - The server should be able to handle incoming connections, assign a unique user ID to each connected client, and maintain a list of connected users.

@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
  */
 public class ChatServer {
     // socket server port on which it will listen
-    private static final int PORT = 5000;
+    private static final int PORT = 5001;
     private final Set<PrintWriter> writers = new HashSet<>();
     private int userIdCounter = 0;
     private final ExecutorService pool = Executors.newFixedThreadPool(50);
@@ -40,19 +40,19 @@ public class ChatServer {
 
     // Run method to handle client communication
     private class ClientHandler implements Runnable {
-        private Socket clientSocket;
+        private final Socket clientSocket;
         private final BufferedReader in;
         private final PrintWriter out;
         private final int userId;
 
         // Constructor
         public ClientHandler(Socket socket) throws IOException {
+            this.clientSocket = socket;
+            this.userId = ++userIdCounter;
+
             // Create input and output streams for communication
             this.in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             this.out = new PrintWriter(clientSocket.getOutputStream(), true);
-
-            this.clientSocket = socket;
-            this.userId = ++userIdCounter;
         }
 
         // Run method to handle client communication
@@ -87,12 +87,12 @@ public class ChatServer {
                 broadcast("User " + userId + " has left the chat.");
             }
         }
+    }
 
-        private void broadcast(String message) {
-            synchronized (writers) {
-                for (PrintWriter writer : writers) {
-                    writer.println(message);
-                }
+    private void broadcast(String message) {
+        synchronized (writers) {
+            for (PrintWriter writer : writers) {
+                writer.println(message);
             }
         }
     }

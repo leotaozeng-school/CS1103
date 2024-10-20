@@ -14,7 +14,7 @@ import java.net.*;
  */
 public class ChatClient {
     private static final String SERVER_ADDRESS = "localhost";
-    private static final int SERVER_PORT = 5000;
+    private static final int SERVER_PORT = 5001;
     private Socket socket;
     private BufferedReader in;
     private PrintWriter out;

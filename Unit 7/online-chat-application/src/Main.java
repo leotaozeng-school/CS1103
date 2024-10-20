@@ -1,3 +1,8 @@
+/**
+ * User Interface:
+ * a. Include a simple text-based for the client to facilitate message input and display.
+ */
+
 import java.util.Scanner;
 
 public class Main {

@@ -1,10 +1,16 @@
+/**
+ * Client Implementation:
+ * a. Implement a client class, ChatClient, that connects to the server using sockets.
+ * b. Each client should be able to send messages to the server, which will broadcast the messages to all connected clients.
+ * c. Clients should also be able to receive messages from other users.
+*/
+
 import java.io.*;
 import java.net.*;
 
 /**
- * This class implements java socket client
+ * This class implements Java Socket Client
  * @author Tao Zeng
- *
  */
 public class ChatClient {
     private static final String SERVER_ADDRESS = "localhost";

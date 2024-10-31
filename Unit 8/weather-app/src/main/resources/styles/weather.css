@@ -1,0 +1,41 @@
+.root {
+    -fx-background-color: #f0f0f0;
+    -fx-font-family: "Arial";
+}
+
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.text-field {
+    -fx-padding: 8px;
+    -fx-pref-width: 200px;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-padding: 5px 0;
+}
+
+.toggle-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #1976D2;
+}
+
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+}
